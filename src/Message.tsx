@@ -10,6 +10,13 @@ function Message() {
      * 
      * Check live demo from
      * babeljs.io/repl
+     * 
+     * A component can have behaviors
+     * as well as dynamically generates the content 
+     * with control flows.
+     * 
+     * {} accepts anything that returns a value, 
+     * can be a variable or a function, e.g., getName()
      */
     const name = "Mosh";
     if (name)
