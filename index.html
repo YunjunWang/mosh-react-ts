@@ -7,6 +7,15 @@
     <title>Vite + React + TS</title>
   </head>
   <body>
+    <!-- this root dom element is the container for our app 
+     where ReactDom can render our app's component tree as a Virtual DOM 
+     Whenever there's a state change of our app's component tree node, 
+     ReactDom will render a new version of the Virtual DOM and
+     compare it with the previous version to identify the nodes that needs
+     to be updated. Then it will update the DOM elements in the HTML view. 
+     The React component tree can be rendered by the ReactDom for web app
+     and also can be rendered by other libraries like React Native for mobile apps.
+     Therefore, React is platform agnostic. -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
