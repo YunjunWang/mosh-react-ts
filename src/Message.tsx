@@ -18,7 +18,7 @@ function Message() {
      * {} accepts anything that returns a value, 
      * can be a variable or a function, e.g., getName()
      */
-    const name = "Mosh";
+    const name = 'Mosh';
     if (name)
         return <h1>Hello {name}</h1>;
     return <h1>Hello World</h1>;
