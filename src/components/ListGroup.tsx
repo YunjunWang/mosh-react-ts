@@ -8,13 +8,27 @@ function ListGroup() {
    * In React, list item must have key value asigned.
    */
 
+  /*
+   * The variable mySelectedIndex won't be used
+   * in the UI element of this component
+   * as it is local to this function component, React isn't
+   * aware of it.
+   * To allow it to be used, need to use React useState to tell
+   * React that this component has data as selectedIndex that might change.
+   */
+  let mySelectedIndex = 0;
+
+  /**
+   * This built-in function useState is called a Hook.
+   * We can give it an initial value.
+   */
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [name, setName] = useState("");
   /*
-   * The useState is an array that has 2 elements:
+   * The useState returns an array that has 2 elements:
    * const arr = useState(-1);
-   * arr[0] = selectedIndex
-   * arr[1] = setSelectedIndex
+   * arr[0] is the variable
+   * arr[1] is the updater function
    *
    * Therefore, we can write it as:
    * const [selectedIndex, setSelectedIndex] = useState(-1);
