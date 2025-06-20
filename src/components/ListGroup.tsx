@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 
 function ListGroup() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -35,6 +35,15 @@ function ListGroup() {
    *
    * We can create mulitple states for the same component in the same way.
    */
+
+  const handleBtnClick = (event: MouseEvent) => {
+    /**
+     * We will get the React SythenticBaseEvent here
+     * which is a wrapper class for the DOM event that
+     * is cross-browser.
+     */
+    console.log(event);
+  };
   return (
     <>
       <h1>List</h1>
@@ -47,12 +56,22 @@ function ListGroup() {
                 : "list-group-item"
             }
             key={item}
-            onClick={() => setSelectedIndex(index)}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
             {item}
           </li>
         ))}
       </ul>
+
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={handleBtnClick}
+      >
+        Base Button
+      </button>
     </>
   );
 }
