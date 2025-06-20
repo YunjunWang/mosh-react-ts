@@ -1,7 +1,16 @@
 import { useState, type MouseEvent } from "react";
 
-function ListGroup() {
-  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+/**
+ * Define types for properties required for this component by using TypeScript interface,
+ * Pass the properties into this component,
+ * Destructure the elements of the properties in props Props to avoid repeatitive coding
+ */
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: Props) {
   /* Return multi lines of code in React is not allowed,
    * use <></> to wrap the code to tell React to use Fragment
    *
@@ -67,7 +76,7 @@ function ListGroup() {
   };
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       <ul className="list-group">
         {items.map((item, index) => (
           <li
