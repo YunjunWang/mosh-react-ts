@@ -1,4 +1,5 @@
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -26,8 +27,17 @@ function App() {
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
+
+  /**
+   * Pass children HTML markup into
+   * the Alert component in between its tags
+   * just like normal HTML tags.
+   */
   return (
     <div>
+      <Alert>
+        Hello <span>world!</span>
+      </Alert>
       <ListGroup
         items={items}
         heading="Cities 1"
