@@ -1,23 +1,29 @@
 import { useState, type MouseEvent } from "react";
 
-/**
- * Define types for properties required for this component by using TypeScript interface,
- * Pass the properties into this component,
- * Destructure the elements of the properties in props Props to avoid repeatitive coding
+/** Passing props to components:
+ * 1. Define types for properties required for this component
+ * by using TypeScript interface:
+ *  - data
+ *  - function
+ *
+ * 2. Pass the properties into this component,
+ * 3. Destructure the elements of the properties in props Props to avoid repeatitive coding
  */
 interface Props {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
-  /* Return multi lines of code in React is not allowed,
+function ListGroup({ items, heading, onSelectItem }: Props) {
+  /** Use Fragments:
+   * Return multi lines of code in React is not allowed,
    * use <></> to wrap the code to tell React to use Fragment
    *
    * In React, list item must have key value asigned.
    */
 
-  /*
+  /** state and local variable:
    * The variable mySelectedIndex won't be used
    * in the UI element of this component
    * as it is local to this function component, React isn't
@@ -27,7 +33,7 @@ function ListGroup({ items, heading }: Props) {
    */
   let mySelectedIndex = 0;
 
-  /**
+  /** useState:
    * This built-in function useState is called a Hook.
    * We can give it an initial value.
    * The useState returns an array that has 2 elements:
@@ -43,7 +49,7 @@ function ListGroup({ items, heading }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [name, setName] = useState("");
 
-  /**
+  /** Event handling:
    * We can move event handling logic out of the JSX markup
    * and create it separately here.
    *
@@ -77,6 +83,7 @@ function ListGroup({ items, heading }: Props) {
   return (
     <>
       <h1>{heading}</h1>
+      {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
           <li
@@ -88,6 +95,7 @@ function ListGroup({ items, heading }: Props) {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
