@@ -1,5 +1,6 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -34,7 +35,7 @@ function App() {
    * just like normal HTML tags.
    */
   return (
-    <div>
+    <>
       <Alert>
         Hello <span>world!</span>
       </Alert>
@@ -50,7 +51,26 @@ function App() {
           console.log(selectedItem);
         }}
       />
-    </div>
+      <div>
+        <Button
+          color="primary"
+          onClick={() => {
+            console.log("Clicked button 1");
+          }}
+        >
+          Base Button 1
+        </Button>
+
+        <Button
+          color="secondary"
+          onClick={() => {
+            console.log("Clicked button 2");
+          }}
+        >
+          Base Button 2
+        </Button>
+      </div>
+    </>
   );
 }
 

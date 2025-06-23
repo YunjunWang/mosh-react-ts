@@ -103,17 +103,13 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
         ))}
       </ul>
 
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={handleBtnClick}
-      >
+      <button type="button" className="btn btn-light" onClick={handleBtnClick}>
         Base Button 1
       </button>
 
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-light"
         onClick={(event) => {
           console.log(event);
         }}
