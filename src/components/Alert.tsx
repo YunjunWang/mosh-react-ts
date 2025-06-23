@@ -7,9 +7,12 @@ import { type ReactNode } from "react";
  */
 
 /**
- * Create an Alert component with css class: alert-dismissible
- * add the button with data-bs-dismiss="alert"  and onClick={onClose}  event
- * Create Props for this component with: onClose: () => void;
+ * 1. Create an Alert component
+ *      with css class: alert-dismissible
+ *    add the button
+ *      with data-bs-dismiss="alert" and onClick={onClose} event
+ * 2. Create Props for this component
+ *      with: onClose: () => void;
  */
 interface Props {
   children: ReactNode;

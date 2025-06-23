@@ -1,13 +1,14 @@
 import { useState, type MouseEvent } from "react";
 
-/** Passing props to components:
+/** Allow inputs for components:
  * 1. Define types for properties required for this component
- * by using TypeScript interface:
- *  - data
+ *    by using TypeScript interface, called props:
+ *  - data: immutable(read-only), never modify them inside the component
  *  - function
  *
  * 2. Pass the properties into this component,
- * 3. Destructure the elements of the properties in props Props to avoid repeatitive coding
+ * 3. Destructure the elements of the properties
+ *    in props Props to avoid repeatitive coding
  */
 interface Props {
   items: string[];
