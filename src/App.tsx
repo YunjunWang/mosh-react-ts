@@ -1,6 +1,7 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import { useState } from "react";
 
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -34,11 +35,27 @@ function App() {
    * the Alert component in between its tags
    * just like normal HTML tags.
    */
+  /**
+   * Can skip passing default properties to child components
+   * e.g., color in Button component
+   */
+
+  /**
+   * set states for the alert:
+   * alertVisible for showing/hiding the alert
+   * setAlertVisible(value: boolean) to set the alertVisible
+   *
+   * onClose/onClick to call setAlertVisible(value: boolean)
+   */
+  const [alertVisible, setAlertVisible] = useState(false);
+
   return (
     <>
-      <Alert>
-        Hello <span>world!</span>
-      </Alert>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisible(false)}>
+          Hello <span>world!</span>
+        </Alert>
+      )}
       <ListGroup
         items={items}
         heading="Cities 1"
@@ -52,14 +69,7 @@ function App() {
         }}
       />
       <div>
-        <Button
-          color="primary"
-          onClick={() => {
-            console.log("Clicked button 1");
-          }}
-        >
-          Base Button 1
-        </Button>
+        <Button onClick={() => setAlertVisible(true)}>Base Button 1</Button>
 
         <Button
           color="secondary"
