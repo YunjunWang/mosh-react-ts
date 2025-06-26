@@ -2,6 +2,13 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import { useState } from "react";
+/**
+ * By default when import from a folder without file name,
+ * it will import everything from the index.ts file
+ * that has been exported from it.
+ * This way makes the code much more cleaner.
+ */
+import NativeCss from "./components/NativeCss";
 
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -51,6 +58,7 @@ function App() {
 
   return (
     <>
+      <NativeCss items={items}>NativeCss</NativeCss>
       {alertVisible && (
         <Alert onClose={() => setAlertVisible(false)}>
           Hello <span>world!</span>

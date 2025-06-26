@@ -1,0 +1,18 @@
+.my-list-group {
+    list-style: none;
+    background-color:darkslateblue
+}
+
+.my-list-group-item {
+    list-style: none;
+    color:gray;
+}
+
+.my-active {
+    list-style: circle;
+    background-color: blueviolet;
+    font-style: italic;
+    font-size: larger;
+    color:azure;
+    font-weight: bolder;
+}
